@@ -62,7 +62,7 @@ class LaneClsDataset(torch.utils.data.Dataset):
         l_info = l.split()
         img_name, label_name = l_info[0], l_info[1]
         if img_name[0] == '/':
-            img_name = img_name[1:]
+            img_name = img_name[1:][:1000]
             label_name = label_name[1:]
 
         label_path = os.path.join(self.path, label_name)
